@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function(){
     header.style.paddingRight = "30px";
     header.style.display = "flex";
     header.style.justifyContent = "flex-start";
-    
 
     // Add styling to child elements of header
     divNav.style.display = "flex";
@@ -68,4 +67,30 @@ document.addEventListener('DOMContentLoaded', function(){
     title.innerHTML = "HighOnCoding";
     home.innerHTML = "Home";
     categories.innerHTML = "Categories";
+
+
+    // Create new container 'main' for the rest of the page and append to container element
+    var main = document.createElement("div");
+    container.appendChild(main);
+
+    // Style 'main'
+    main.style.padding = "20px";
+
+    // Create new div, h1 and p tags for Reviews section and append to main
+    var currentReviews = document.createElement("div");
+    var reviewsHeading = document.createElement("h1");
+    var reviewsParagraph = document.createElement("p");
+    main.appendChild(currentReviews);
+    currentReviews.appendChild(reviewsHeading);
+    currentReviews.appendChild(reviewsParagraph);
+
+    // Add text to the child elements
+    reviewsHeading.innerHTML = "Curse of the Current Reviews";
+    reviewsParagraph.innerHTML = "When you buy any application from the Apple iTunes storeyou have more choices than you can handle. Most of the users scroll past the application description completely avoiding it like ads displayed on the right column of your webpage. Their choice is dependent on three important factors: price, screenshot and reviews."
+    
+    // Style currentReviews along with child elements
+    currentReviews.style.backgroundColor = "#DBD2ED";
+    currentReviews.style.color = "#49464F";
+    currentReviews.style.padding = "5px 20px 10px 20px";
+
 })

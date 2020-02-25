@@ -29,18 +29,43 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // Create elements necessary for header
     var header = document.createElement("header");
+    var divTitle = document.createElement("div");
     var title = document.createElement("h1");
+    var divNav = document.createElement("div");
     var nav = document.createElement("nav");
+    var home = document.createElement("li");
+    var categories = document.createElement("li");
 
     // Apend elements to container
     container.appendChild(header);
-    header.appendChild(title);
-    header.appendChild(nav);
+    header.appendChild(divTitle);
+    header.appendChild(divNav);
+    divTitle.appendChild(title);
+    divNav.appendChild(nav);
+    nav.appendChild(home);
+    nav.appendChild(categories);
 
     // Add styling to header
     header.style.backgroundColor = "#61BDFF";
     header.style.color = "#FFFFF9";
+    header.style.paddingLeft = "30px";
+    header.style.paddingRight = "30px";
+    header.style.display = "flex";
+    header.style.justifyContent = "flex-start";
+    
+
+    // Add styling to child elements of header
+    divNav.style.display = "flex";
+    divNav.style.alignItems = "center";
+    home.style.display = "inline-block";
+    home.style.fontSize = "22px";
+    home.style.paddingLeft = "50px";
+    home.style.paddingRight = "50px";
+    categories.style.display = "inline-block";
+    categories.style.fontSize = "22px";
+
     // Add text
     title.innerHTML = "HighOnCoding";
-    nav.innerHTML = "<ul><li>Home</li><li>Categories</li></ul>";
+    home.innerHTML = "Home";
+    categories.innerHTML = "Categories";
 })

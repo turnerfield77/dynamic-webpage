@@ -1,21 +1,5 @@
 /*
-    Basic Outline of webpage
-    - header
-        - h1: High on Coding
-        - ul: Home / Categories
-    - div
-        - h1: Curse of the Current Reviews
-        - p: paragraph from image
-    - div
-        - h2: Hello WatchKit
-        - p: paragraph from image
-    - div
-        - 12 comments / 124 likes
-    - div
-        - h2: Introduction to Swift
-        - p: paragraph from image
-    - div
-        - 15 comments / 45 likes
+    I initially misunderstood the point of the exercise and it isn't actually 'dynamic', so if this is reviewed before I get to actually correct it, I'm working through making each post dynamically built.
 */
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -148,4 +132,45 @@ document.addEventListener('DOMContentLoaded', function(){
     watchkitComments.style.display = "inline-block";
     watchkitLikes.style.display = "inline-block";
 
+    /*
+        Introduction to Swift Section
+    */
+
+    // Create div element for swift section and append to main
+    var swift = document.createElement("div");
+    main.appendChild(swift);
+
+    // Create elements that make up swift section and append
+    var swiftHeading = document.createElement("h2");
+    var swiftParagraph = document.createElement("p");
+    var swiftList = document.createElement("ul");
+    var swiftComments = document.createElement("li");
+    var swiftLikes = document.createElement("li");
+    swift.appendChild(swiftHeading);
+    swift.appendChild(swiftParagraph);
+    swift.appendChild(swiftList);
+    swiftList.appendChild(swiftComments);
+    swiftList.appendChild(swiftLikes);
+
+    // Add text to the child elements
+    swiftHeading.innerText = "Introduction to Swift";
+    swiftParagraph.innerText = "Swift is a modern programming language developed by Apple to create the next generation of iOS and OSX applications. Swift is a fairly new language and still in development but it clearly reflects the intentions and the future direction. This article will revolve around the basic concepts in the Swift language and how you can get started";
+    swiftComments.innerText = "15 Comments";
+    swiftLikes.innerText = "45 Likes";
+
+    // Style child elements
+    swift.style.display = "flex";
+    swift.style.flexDirection = "column";
+    swift.style.justifyContent = "flex-start";
+    swiftHeading.style.color = "#61BDFF";
+    swiftHeading.style.marginBottom = "0";
+    swiftParagraph.style.color = "#49464F";
+    swiftParagraph.style.marginBottom = "0";
+    swiftList.style.backgroundColor = "#F8AB11";
+    swiftList.style.color = "white";
+    swiftList.style.marginTop = "0";
+    swiftList.style.padding = "5px";
+    swiftComments.style.paddingRight = "30px";
+    swiftComments.style.display = "inline-block";
+    swiftLikes.style.display = "inline-block";
 })
